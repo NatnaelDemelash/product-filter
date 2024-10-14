@@ -7,7 +7,7 @@ import {
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
 import { cn } from '@/lib/utils';
-import { ArrowDownNarrowWideIcon } from 'lucide-react';
+import { ArrowDownNarrowWideIcon, Filter } from 'lucide-react';
 import { useState } from 'react';
 
 const SORT_OPTIONS = [
@@ -38,7 +38,7 @@ export default function Home() {
               {SORT_OPTIONS.map((option) => (
                 <button
                   className={cn('text-left w-full px-4 py-2 block text-xs', {
-                    'text-gray-900 font-semibold bg-blue-100':
+                    'text-gray-900 font-semibold bg-gray-100':
                       option.value === filter.sort,
                     'text-gray-500': option.value !== filter.sort,
                   })}
@@ -55,6 +55,10 @@ export default function Home() {
               ))}
             </DropdownMenuContent>
           </DropdownMenu>
+
+          <button className="-m-2 ml-4 p-2 text-gray-400 hover:text-gray-500 sm:ml-6 lg:hidden">
+            <Filter className="h-5 w-5" />
+          </button>
         </div>
       </div>
     </main>
