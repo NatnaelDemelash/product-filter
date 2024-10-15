@@ -1,5 +1,7 @@
 import { Index } from '@upstash/vector';
 
+require('dotenv').config({ path: '.env.local' });
+
 export type Product = {
   id: string;
   imageId: string;
